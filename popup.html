@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter Language Blocker</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 300px;
+      padding: 10px;
+    }
+    h1 {
+      font-size: 18px;
+      color: #1da1f2;
+      margin-bottom: 15px;
+    }
+    .language-option {
+      margin-bottom: 10px;
+    }
+    button {
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #0c85d0;
+    }
+    .status {
+      margin-top: 10px;
+      color: green;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Twitter Language Blocker</h1>
+  
+  <div class="language-options">
+    <div class="language-option">
+      <input type="checkbox" id="chinese" name="chinese">
+      <label for="chinese">Chinese (中文)</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="arabic" name="arabic">
+      <label for="arabic">Arabic (العربية)</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="russian" name="russian">
+      <label for="russian">Russian (Русский)</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="japanese" name="japanese">
+      <label for="japanese">Japanese (日本語)</label>
+    </div>
+    <div class="language-option">
+      <input type="checkbox" id="korean" name="korean">
+      <label for="korean">Korean (한국어)</label>
+    </div>
+    <!-- Add more languages as needed -->
+  </div>
+  
+  <button id="save">Save Settings</button>
+  <div id="status" class="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html> 

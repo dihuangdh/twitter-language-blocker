@@ -1,0 +1,32 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Node.js (if you add packages later)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build directories
+dist/
+build/
+
+# Extension packaging
+*.zip
+*.crx
+*.pem
+
+# Local development files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local 

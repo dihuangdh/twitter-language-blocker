@@ -1,0 +1,11 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple blue background -->
+  <rect width="128" height="128" fill="#1da1f2" rx="16" ry="16"/>
+  
+  <!-- Language symbol (stylized "A") -->
+  <text x="64" y="80" font-family="Arial, sans-serif" font-size="80" font-weight="bold" text-anchor="middle" fill="white">A</text>
+  
+  <!-- Red prohibition symbol -->
+  <circle cx="64" cy="64" r="54" fill="none" stroke="#ff3b30" stroke-width="8"/>
+  <line x1="32" y1="96" x2="96" y2="32" stroke="#ff3b30" stroke-width="8"/>
+</svg> 

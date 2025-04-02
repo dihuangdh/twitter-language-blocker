@@ -1,0 +1,11 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blue background -->
+  <rect width="128" height="128" fill="#1da1f2" rx="16" ry="16"/>
+  
+  <!-- Stylized "T" for Twitter -->
+  <path fill="white" d="M44,42 h40 v10 h-15 v36 h-10 v-36 h-15 z"/>
+  
+  <!-- Red prohibition symbol -->
+  <circle cx="64" cy="64" r="50" fill="none" stroke="#ff3b30" stroke-width="8"/>
+  <line x1="32" y1="96" x2="96" y2="32" stroke="#ff3b30" stroke-width="8"/>
+</svg> 

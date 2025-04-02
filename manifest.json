@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Twitter Language Blocker",
+  "version": "1.0",
+  "description": "Block tweets in specific languages on Twitter/X",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://twitter.com/*", "https://x.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "images/simple_icon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://twitter.com/*", "https://x.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "128": "images/simple_icon.svg"
+  }
+} 
