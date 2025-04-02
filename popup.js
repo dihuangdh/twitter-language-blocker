@@ -6,11 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check boxes based on saved settings
     document.querySelectorAll('.language-option input[type="checkbox"]').forEach(checkbox => {
       checkbox.checked = blockedLanguages[checkbox.id] || false;
+      
+      // Add change event listener to each checkbox for automatic saving
+      checkbox.addEventListener('change', saveSettings);
     });
   });
 
-  // Save settings when button is clicked
-  document.getElementById('save').addEventListener('click', function() {
+  // Function to save settings
+  function saveSettings() {
     const blockedLanguages = {};
     
     // Collect all checked languages
@@ -31,10 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Trigger content script to update blocking without requiring page refresh
       chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        if (tabs[0].url.includes('twitter.com') || tabs[0].url.includes('x.com')) {
+        if (tabs[0]?.url.includes('twitter.com') || tabs[0]?.url.includes('x.com')) {
           chrome.tabs.sendMessage(tabs[0].id, {action: "updateBlocking", blockedLanguages: blockedLanguages});
         }
       });
     });
-  });
+  }
 }); 

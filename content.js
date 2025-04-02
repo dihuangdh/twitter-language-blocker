@@ -67,14 +67,33 @@ function setupObserver() {
   }
 }
 
-// Load blocked languages from storage when the script starts
-chrome.storage.sync.get(['blockedLanguages'], function(result) {
-  blockedLanguages = result.blockedLanguages || {};
-  
-  // Process existing tweets and set up observer for new ones
-  processTweets();
-  setupObserver();
-});
+// Initialize the extension
+function initialize() {
+  // Load blocked languages from storage
+  chrome.storage.sync.get(['blockedLanguages'], function(result) {
+    blockedLanguages = result.blockedLanguages || {};
+    
+    // Process existing tweets immediately after getting settings
+    processTweets();
+    
+    // Set up observer for new tweets
+    setupObserver();
+    
+    // Periodically process tweets to ensure none are missed
+    // This helps when navigating between pages on Twitter
+    setInterval(processTweets, 2000);
+  });
+}
+
+// Initialize as soon as the content script loads
+initialize();
+
+// Also initialize when the document is fully loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initialize);
+} else {
+  initialize();
+}
 
 // Listen for messages from the popup
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {

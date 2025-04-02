@@ -8,8 +8,10 @@ A simple Chrome extension that blocks tweets in specific languages (like Chinese
 
 - **Block Multiple Languages**: Filter out tweets in Chinese, Arabic, Russian, Japanese, Korean
 - **Simple Interface**: Easy-to-use checkbox selection for languages to block
+- **Automatic Settings**: Settings save automatically when you toggle language options
 - **Real-time Filtering**: Blocks tweets as you scroll without needing to refresh
 - **Lightweight**: Minimal impact on browser performance
+- **Site-Specific**: Only works on Twitter/X websites - doesn't affect any other sites
 
 ## Installation
 
@@ -42,8 +44,9 @@ git clone https://github.com/yourusername/twitter-lingo-blocker.git
 1. After installation, you'll see the extension icon in your Chrome toolbar
 2. Click the icon to open the extension popup
 3. Check the boxes next to languages you want to block
-4. Click "Save Settings"
+4. Settings are saved automatically - no need to click a save button
 5. Browse Twitter/X - tweets in the selected languages will be hidden automatically
+6. Your settings will persist between browser sessions and page refreshes
 
 ## How It Works
 
@@ -53,8 +56,10 @@ The extension scans tweets on your timeline using Unicode character ranges to de
 
 - Uses MutationObserver to detect and process new tweets as they load
 - Language detection via Unicode character ranges
-- Settings stored in Chrome's sync storage
+- Settings stored in Chrome's sync storage for persistence across devices
+- Automatically applies settings when Twitter/X pages load or refresh
 - Compatible with both twitter.com and x.com domains
+- Only runs on Twitter/X domains - other websites remain unaffected
 
 ## Privacy
 
@@ -63,6 +68,7 @@ This extension:
 - Does NOT send any information to external servers
 - All processing happens locally in your browser
 - Your language preferences are stored only in your browser's local storage
+- Only activates on Twitter/X websites
 
 ## Contributing
 
